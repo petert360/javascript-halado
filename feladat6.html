@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //6. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb második legkisebb elemét!
+
+        /*
+        Pseudocode:
+        1. a tömb elemeit rendezni kell mondjuk buborék rendezéssel:
+        Bubble sort:
+        For each item in the array we want to check if the next item is larger, if it is then swap their indexes in the array.
+        To avoid recomparing sorted numbers we’ll start from the back of the array while another for loop gets the preceding number.
+        This way all of the largest values build up, or “bubbles up”, on the end.
+        
+        2. a rendezés végére a tömb elemei 0-tól emelkednek, 
+        így a tömb 1. indexű eleme (balról a második) lesz a második legkisebb.
+
+        */
+
+        const sampleArr = [123, 21321, 54, 32, 123, 235235, 214, 124]; // tömb megadása
+
+        function secondSmallest(arr) {
+            for (let i = 0; i < arr.length; i += 1) {
+                for (let j = 0; j < arr.length; j += 1) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            console.log(arr);
+        }
+        console.log(sampleArr);
+        secondSmallest(sampleArr);
+        console.log(sampleArr[1]);
+    </script>
+</body>
+
+</html>

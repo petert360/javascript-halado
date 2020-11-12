@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //5. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb páros elemeinek a számát!
+
+        /*
+        Pseudocode:
+        0. Páros elem: párosak azok, amelyek oszthatóak 2-vel = ha 2-vel osztom, nincs maradék
+        1. modulus operator: % azaz, ha z = x % 2 esetén ha z = 0, akkor x páros
+        1. Létrehozok egy változót amnek az értéke páros szám találása estén eggyel nő.
+        2. Egy for ciklus segítségével végigmegyek a tömb összes elemén, és ha párosat találok akkor növelem az értéket
+        4. A ciklus végén kiírom: [páros számok száma].
+        */
+
+        const sampleArr = [123, 21321, 54, 32, 123, 235235, 214, 124]; // tömb megadása
+
+        function numOfEven(arr) {
+            let counter = 0;
+            for (let i = 0; i < arr.length; i += 1) {
+                if (arr[i] % 2 === 0) {
+                    counter += 1;
+                }
+                
+            }
+            console.log(counter);
+        }
+
+        numOfEven(sampleArr);
+    </script>
+</body>
+
+</html>
