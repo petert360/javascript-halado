@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 3. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb átlagát!
+
+        /*
+        Pseudocode:
+        0. Átlag: [tömb elemeinek összege]/[tömb elemeinek száma]
+        1. Kell egy változó, ami felveszi a tömb elemeinek számát.
+        2. Egy for ciklus segítségével végigmegyek a tömb összes elemén, és összeadom őket
+        3. Ha kisebb, az lesz a legkisebb
+        4. A tömb végén kiírom a legkisebb érétéket.
+        */
+
+        const sampleArr = [123, 21321, 54, 32, 123, 235235, 214, 124]; // tömb megadása
+
+        function avgOfArr(arr) {
+            let numOfArr = arr.length;
+            let sumOfArr = 0;
+            for (let i = 0; i < arr.length; i += 1) {
+                sumOfArr = sumOfArr+arr[i];
+            }
+            let avg = sumOfArr / numOfArr;
+            console.log(avg);
+        }
+
+        avgOfArr(sampleArr);
+    </script>
+</body>
+
+</html>
