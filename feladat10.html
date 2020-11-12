@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //10. Írd ki, hogy egy tetszőlegese elemszámú, bármilyen típusú elemeket tartalmazó tömb (feltételezzük, hogy beágyazott tömböt, objektumot nem tartalmaz) hányszor tartalmazza a 23-as számot!
+
+        /*
+        Pseudocode:
+        1. A függvénynek két elemet adok át: 1. a tömböt, és a keresett értéket.
+        2. A lineáris keresés során for ciklussal végigmegyek az elemeken és nézem, hogy a keresett értékkel egyezik-e az aktuális elem.
+        3. Ha megtaláltam, nem lépek ki returnnal, hanem a számot adom vissza, hányszor találtam meg.
+        */
+
+        const sampleArr = [123, 21321, 'asd', 32, 23, 123, 235235, 214, 124, 23]; // tömb megadása
+
+        function searchInArr(arr, sample) {
+            let result = 0;
+            for (let i = 0; i < arr.length; i += 1) {
+                if (sample === arr[i]) {
+                    result += 1;
+                }
+            } return result
+        }
+        console.log(searchInArr(sampleArr, 23));
+    </script>
+</body>
+
+</html>

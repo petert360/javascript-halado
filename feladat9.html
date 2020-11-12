@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //9. Írd ki (igen vagy nem), hogy egy tetszőlegese elemszámú, csak egész számokat tartalmazó tömb tartalmazza-e a 23-as számot! Használj logaritmikus keresést! Nézz utána mi az, milyen feltételei vannak, és hogyan valósítható meg!
+
+        /*
+        Pseudocode:
+        0. A logaritmikus keresést bináris keresésnek is hívjuk.
+        1. A keresés feltétele, hogy a tömb rendezett legyen, ezért az első lépés rendezni az alaptömböt.
+        2. 
+        
+        */
+        // rendező függvény
+        function sortArr(arr) {
+            for (let i = 0; i < arr.length; i += 1) {
+                for (let j = 0; j < arr.length; j += 1) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        };
+
+        //kereső függvény
+        function binSearch(arr, val) {
+            let start = 0;
+            let end = arr.length - 1;
+            while (start <= end) {
+                let mid = Math.floor((start + end) / 2);
+                if (arr[mid] === val) {
+                    return true;
+                }
+                else if (arr[mid] < val) {
+                    start = mid + 1;
+                }
+                else
+                    end = mid - 1;
+            }
+            return false;
+        }
+
+        //vezérlő kód
+        const sampleArr = [123, 21321, 32, 127, 235235, 214, 124, 23]; // tömb megadása
+        sortArr(sampleArr); //tömb rendezése
+        console.log(binSearch(sampleArr, 123));
+        document.write(binSearch(sampleArr, 123));
+    </script>
+</body>
+
+</html>
