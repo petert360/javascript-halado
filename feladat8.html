@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //8. Írd ki (igen vagy nem), hogy egy tetszőlegese elemszámú, bármilyen típusú elemeket tartalmazó tömb (feltételezzük, hogy beágyazott tömböt, objektumot, egyéb iterálható elemet nem tartalmaz) tartalmazza-e a 23-as számot! Használj lineáris keresést!
+
+        /*
+        Pseudocode:
+        1. A függvénynek két elemet adok át: 1. a tömböt, és a keresett értéket.
+        2. A keresés során for ciklussal végigmegyek az elemeken és nézem, hogy a keresett értékkel egyezik-e az aktuális elem.
+        3. Ha igen, akkor a for ciklusból returnnal lépek ki igent visszaadva.
+        */
+
+        const sampleArr = [123, 21321, 'asd', 32, 123, 235235, 214, 124, 23]; // tömb megadása
+
+        function searchInArr(arr, sample) {
+            for (let i = 0; i < arr.length; i += 1) {
+                if (sample === arr[i]) {
+                    return 'igen'
+                }
+            } return 'nem'
+        }
+        console.log(searchInArr(sampleArr, 23));
+
+    </script>
+</body>
+
+</html>
