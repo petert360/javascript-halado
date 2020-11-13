@@ -14,27 +14,57 @@
 
         /*
         Pseudocode:
+        1. gather fv: fussunk végig a tömbön, és gyűjtsük ki a 'num' és 'str' elemeket két külön fv-ben.
+        2. a numArr-hoz bubblesort után pusholjuk az elseArr-t és kiírjuk a console-ra.
         */
 
-        const sampleArr = [12, 21.321, 32, 'asd', 23, 22.35, 'lkfklf']; // tömb megadása
+
+
+        const sampleArr = [12, 21.321, 3242, 'asd', 2233, 'kjdshfdsk', 22.35, 'lkfklf']; // tömb megadása
+
+        function gather(arr, typ) {
+            let numArr = new Array();
+            let elseArr = new Array();
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof (arr[i]) === 'number') {
+                    numArr.push(arr[i]);
+                }
+                else {
+                    elseArr.push(arr[i]);
+                }
+            }
+            if (typ === 'num') {
+                return numArr;
+            }
+            else if (typ === 'str') {
+                return elseArr;
+            }
+        }
 
         function sortWithAdvBubble(arr) {
             let swapped;
             do {
-                for (let i = 0; i < arr.length; i += 1) {
-                    for (let j = 0; j < arr.length; j += 1) {
-                        if (arr[j] > arr[j + 1]) {
-                            let temp = arr[j];
-                            arr[j] = arr[j + 1];
-                            arr[j + 1] = temp;
-                            swapped = true;
-                        }
+                swapped = false;
+                for (let j = 0; j < arr.length; j += 1) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        swapped = true;
                     }
                 }
             } while (swapped)
             return arr;
         }
-        console.log(sortWithAdvBubble(sampleArr));
+        //        console.log(sortWithAdvBubble(sampleArr));
+
+        let numArr = gather(sampleArr, 'num');
+        let strArr = gather(sampleArr, 'str');
+        for (let i = 0; i < strArr.length; i++) {
+          numArr.push(strArr[i]);//  newArr = const element = array[i];
+        }
+        console.log(numArr);
+
     </script>
 </body>
 
