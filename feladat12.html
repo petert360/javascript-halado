@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //12. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, beágyazott tömb, és objektum kivételével bármilyen típusú elemeket tartalmazó tömb elemeit csökkenő sorrendbe! A nem szám típusú elemeket rakd a tömb végére az eredeti sorrendbe. Írasd ki a rendezett tömböt!
+
+
+        /*
+        Pseudocode:
+        */
+
+        const sampleArr = [12, 21.321, 32, 'asd', 23, 22.35, 'lkfklf']; // tömb megadása
+
+        function sortWithAdvBubble(arr) {
+            let swapped;
+            do {
+                for (let i = 0; i < arr.length; i += 1) {
+                    for (let j = 0; j < arr.length; j += 1) {
+                        if (arr[j] > arr[j + 1]) {
+                            let temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                            swapped = true;
+                        }
+                    }
+                }
+            } while (swapped)
+            return arr;
+        }
+        console.log(sortWithAdvBubble(sampleArr));
+    </script>
+</body>
+
+</html>

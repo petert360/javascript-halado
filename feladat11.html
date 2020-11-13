@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //11. Rendezd a javított buborékos rendezés algoritmus (nézz utána mi az, ha nem ismered) segítségével egy tetszőleges elemszámú, csak lebegőpontos számokat tartalmazó tömb elemeit növekvő sorrendbe! Írasd ki a rendezett tömböt!
+
+
+        /*
+        Pseudocode:
+        A javított buborékos rendezés alkalmazása float számokat tartalmazó tömbön.
+        
+        */
+        //const sampleArr = [12.3, 21.321, 3.2, 2.3, 1.23, 23.5235, 21.4, 1.24, 2.3]; // tömb megadása
+        const sampleArr = [1.23, 21.321, 3];
+        function sortWithAdvBubble(arr) {
+            let swapped;
+            do {
+                for (let i = 0; i < arr.length-1; i += 1) {
+                    if (arr[i] > arr[i + 1]) {
+                        let temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped)
+            return arr;
+        }
+        console.log(sortWithAdvBubble(sampleArr));
+    </script>
+</body>
+
+</html>
