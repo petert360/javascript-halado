@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //13. Adott egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb. A tömb elemeit rendezzük növekvő sorrendbe. Ezután a felhasználótól kérjünk be egy számot (addig kérjünk be értéket, míg valóban egy véges egész számot ad meg). A számot szúrjuk be a tömbbe úgy, hogy a tömb továbbra is rendezett maradjon, tehát a megfelelő indexű helyre kerüljön be a plusz elem.Írasd ki a rendezett tömböt!
+
+
+        /*
+        Pseudocode:
+        0. [véletlen tömb generátor]
+        1. tömb rendezése advanced bubble sorttal
+        2. szám bekérése (ellenőrizni, hogy egész-e)
+        3a) beszúrni a végére és újra rendezni
+        3b) megkeresni a hozzá legközelebb álló legbagyobb elemet, ott bontani a tömböt és bszúrni
+        */
+
+        function gather(arr, typ) {
+            let numArr = new Array();
+            let elseArr = new Array();
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof (arr[i]) === 'number') {
+                    numArr.push(arr[i]);
+                }
+                else {
+                    elseArr.push(arr[i]);
+                }
+            }
+            if (typ === 'num') {
+                return numArr;
+            }
+            else if (typ === 'str') {
+                return elseArr;
+            }
+        }
+
+        function sortWithAdvBubble(arr) {
+            let swapped;
+            do {
+                swapped = false;
+                for (let j = 0; j < arr.length; j += 1) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped)
+            return arr;
+        }
+        
+//        const sampleArr = [12, 21321, 3242, 2233, 2235,]; // tömb megadása
+
+        const rndArr = [];
+        let name;
+        for (let i = 0; i < 9; i++) {
+            // let rnd=Math.floor(Math.random()*1000/10);
+            let rnd=Math.floor(Math.random() * (100 - 1) + 1);
+            rndArr.push(rnd);
+           
+        } 
+        
+        while (Number.isInteger(Number(name))===false) {
+            name = window.prompt("Írj be egy egész számot: ");    
+        }
+        
+        console.log(Number.isInteger(Number(name)));
+        console.log(name);
+        console.log(sortWithAdvBubble(rndArr));
+        
+    </script>
+</body>
+
+</html>
