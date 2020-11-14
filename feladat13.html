@@ -14,9 +14,9 @@
 
         /*
         Pseudocode:
-        0. [véletlen tömb generátor]
-        1. tömb rendezése advanced bubble sorttal
-        2. szám bekérése (ellenőrizni, hogy egész-e)
+        0. OK [véletlen tömb generátor]
+        1. OK tömb rendezése advanced bubble sorttal
+        2. OK szám bekérése (ellenőrizni, hogy egész-e)
         3a) beszúrni a végére és újra rendezni
         3b) megkeresni a hozzá legközelebb álló legbagyobb elemet, ott bontani a tömböt és bszúrni
         */
@@ -59,7 +59,7 @@
 //        const sampleArr = [12, 21321, 3242, 2233, 2235,]; // tömb megadása
 
         const rndArr = [];
-        let name;
+        let num;
         for (let i = 0; i < 9; i++) {
             // let rnd=Math.floor(Math.random()*1000/10);
             let rnd=Math.floor(Math.random() * (100 - 1) + 1);
@@ -67,12 +67,14 @@
            
         } 
         
-        while (Number.isInteger(Number(name))===false) {
-            name = window.prompt("Írj be egy egész számot: ");    
+        while (Number.isInteger(Number(num))===false) {
+            num = window.prompt("Írj be egy egész számot: ");    
         }
         
-        console.log(Number.isInteger(Number(name)));
-        console.log(name);
+        console.log(sortWithAdvBubble(rndArr));
+        rndArr.push(parseInt(num));
+        console.log(Number.isInteger(Number(num)));
+        console.log(num);
         console.log(sortWithAdvBubble(rndArr));
         
     </script>
