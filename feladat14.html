@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //14. Adott egy tömb, mely azonos darabú egész számot, és szöveget tartalmaz véletlenszerű sorrendben. Rendezzük úgy a tömböt, hogy minden szám után egy string következzen! Írasd ki a rendezett tömböt!
+
+
+        /*
+        Pseudocode:
+        1. a tömb szétszedése a) számokra b) stringekre
+        2. a tömb osszevágása úgy, hogy egy szám - egy sztring
+        */
+
+        function gather(arr, typ) {
+            let numArr = new Array();
+            let elseArr = new Array();
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof (arr[i]) === 'number') {
+                    numArr.push(arr[i]);
+                }
+                else {
+                    elseArr.push(arr[i]);
+                }
+            }
+            if (typ === 'num') {
+                return numArr;
+            }
+            else if (typ === 'str') {
+                return elseArr;
+            }
+        }
+
+        function sortWithAdvBubble(arr) {
+            let swapped;
+            do {
+                swapped = false;
+                for (let j = 0; j < arr.length; j += 1) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped)
+            return arr;
+        }
+
+        const sampleArr = [12, 21321, 3242, 2233, 'kjdshfdsk', 'asd', 'sdfj', 'lkfklf']; // tömb megadása
+        const nArr = gather(sampleArr,'num');
+        const sArr = gather(sampleArr,'str');
+        const sumArr = [];
+        console.log(nArr);
+        console.log(sArr);
+        for (let i = 0; i < nArr.length; i++) {
+            sumArr.push(nArr[i])
+            sumArr.push(sArr[i])
+        }
+        console.log(sumArr);
+
+    </script>
+</body>
+
+</html>
