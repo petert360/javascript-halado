@@ -1,6 +1,6 @@
 # Algoritmizálás
 
-~~1. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét!~~
+:OK:1. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legkisebb elemét!
 ~~2. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb legnagyobb elemét!~~
 ~~3. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb átlagát!~~
 ~~4. Írasd ki egy tetszőleges elemszámú, csak egész számokat tartalmazó tömb összegét!~~
