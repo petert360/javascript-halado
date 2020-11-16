@@ -1,0 +1,42 @@
+<!-- https://e-learning.training360.com/courses/take/1javascript-halado/texts/17897141-feladatok 
+1. Feladat
+Hozz létre egy html fájlt benne 3 gombbal! A gombok szövegei az alábbiak legyenek: Első, Második, Harmadik. Mindegyik gombnak add meg a button class-t!
+Készíts egy JavaScript fájlt, és linkeld be a html oldaladba! Írj egy függvény kifejezést arrow function segítségével. A függvény neve handleClick legyen A függvény a meghívása után mindegyik gombhoz hozzáad egy eseményfigyelőt, amely kattintásra kiírja a gomb szövegét a konzolra. A függvényen belül ciklust használj, tehát ne manuálisan egyesével add a gombokhoz az eseményfigyelőt!
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">Első</button>
+    <button class="btn">Második</button>
+    <button class="btn">Harmadik</button>
+
+    <script>
+        'use strict';
+
+        let btnElements = document.querySelectorAll('.btn');
+        //console.log(btnElements);
+        for (let i = 0; i < btnElements.length; i++) {
+            btnElements[i].addEventListener('click', function() {
+              //  let txt=btnElements[i].getElementsByClassName("btn").innerHTML;
+                console.log(this.innerHTML);
+            })
+         
+        }
+
+        //document.getElementById("demo").innerHTML = "Hello World";
+        
+        //let handleClick =
+    </script>
+</body>
+
+</html>
