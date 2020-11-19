@@ -1,0 +1,44 @@
+<!-- https://e-learning.training360.com/courses/take/1javascript-halado/texts/17897141-feladatok 
+3. Feladat
+Hozz létre egy függvény kifejezést arrow functionnel! A függvény neve personDataLog legyen. A függvény paraméterként egy objektumot vár, ami egy firstname, lastname, és age tulajdonságokkal rendelkezik. Amennyiben bármelyik tulajdonság hiányozna úgy rendre a következő alapértelemezett értékeket vegyék fel: - firstname: John - lastname: Doe - age: 33
+
+A függvény kiírja az adott illető adatai a konzolra az adott formátumban:
+My name is firstname, lastname. I'm age years old.
+A firstname, lastname és age helyére a paraméterként kapott objektum tulajdonságok értékét kell behelyettesíteni.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        //először létrehozm a szokásos fv kifejezéssel, először fnExp segítségével, és a fnExp-et átalakítom arrFn-ná.
+        //1.
+        const personDataLog = function ({ firstName= 'John', lastName= 'Doe', age= 33 }={}) {
+            return console.log('My name is ' + firstName + ', ' + lastName + '. I\'m ' + age + ' years old.');
+        }
+
+        const personDataLogAF = ({ firstName= 'John', lastName= 'Doe', age= 33 }={}) => {
+            console.log('My name is ' + firstName + ', ' + lastName + '. I\'m ' + age + ' years old.');
+        }
+
+        const person = {
+            // firstName:'Abc',
+            lastName: 'Def',
+            // age: 20,
+        }
+        personDataLog(person);
+        personDataLogAF(person);
+
+    </script>
+</body>
+
+</html>

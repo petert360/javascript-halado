@@ -1,0 +1,51 @@
+<!-- https://e-learning.training360.com/courses/take/1javascript-halado/texts/17897141-feladatok 
+2. Feladat
+Hozz létre két függvény kifejezést arrow functionnel! A függvények neve summation és subtraction. Mindegyik függvény két paramétert kap, ezek neve a és b. Amennyiben bármelyik paraméter hiányozna a függvény meghívásakor, úgy az alapértelemezett érték a 0 legyen.
+A summation visszatér a két szám összegével, a subtraction visszatér a két szám különbségével.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        //először létrehozm a szokásos fv kifejezéssel, először fnDec, majd fnExp segítségével, és a fnExp-et átalakítom arrFn-ná.
+        //1.
+        function summationFD(a = 0, b = 0) {
+            return a + b;
+        }
+        function subtractionFD(a = 0, b = 0) {
+            return a - b;
+        }
+        //2.
+        const sumFE = function (a = 0, b = 0) {
+            return a + b;
+        }
+        const subFE = function (a = 0, b = 0) {
+            return a - b;
+        }
+
+        //3.
+        const sumAF = (a=0, b=0) => {return a+b}
+        const subAF = (a=0, b=0) => {return a-b}
+
+
+        console.log(summationFD(1, 2));
+        console.log(subtractionFD(1, 2));
+        console.log(sumFE(1, 2));
+        console.log(subFE(1, 2));
+        console.log(sumAF(1, 2));
+        console.log(subAF(1, 2));
+    </script>
+</body>
+
+</html>

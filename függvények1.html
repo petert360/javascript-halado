@@ -26,16 +26,13 @@ Készíts egy JavaScript fájlt, és linkeld be a html oldaladba! Írj egy függ
         let btnElements = document.querySelectorAll('.btn');
         //console.log(btnElements);
         for (let i = 0; i < btnElements.length; i++) {
-            btnElements[i].addEventListener('click', function() {
-              //  let txt=btnElements[i].getElementsByClassName("btn").innerHTML;
-                console.log(this.innerHTML);
+            // egy anonim fv-t hívok meg, akinek az event objektumot adom át 
+            btnElements[i].addEventListener('click', function (event) {
+                console.log(event);
+                console.log(event.target.textContent);
             })
-         
         }
 
-        //document.getElementById("demo").innerHTML = "Hello World";
-        
-        //let handleClick =
     </script>
 </body>
 
