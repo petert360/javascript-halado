@@ -23,6 +23,8 @@ A reducer() visszatérési értéke akkumulálódik és argumentumként adódik 
 Ha nem adok meg initialValue-t, akkor a tömb első elemét veszi annak és a második elemtől kezdődik az iteráció. Ez azért igényel odafigyelést, mert ha a tömb üres, hibát eredményez a metódus hívás.
 
 Harmadik lépésben arrFn-t hozok létre a fnDec helyett.
+
+Ez a feladat teljesíti a második feladat követelényeit is.
 */
 
 function sumParameters1(...param) {
