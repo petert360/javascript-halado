@@ -64,8 +64,6 @@ function sumParameters4(...param) {
         }))
 }
 
-
-
 sumParameters1(1, 2, 3);
 sumParameters2(1, Number.MAX_VALUE, 3);
 sumParameters3(1, 2, 3);
