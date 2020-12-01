@@ -12,11 +12,16 @@ A fenti metódusok értelemszerűen nem másra szolgálnak, mint az egyik össze
 */
 
 const newObj = {
-    arrayToMap: function (array) {
-        
+    arrayToMap: function (arr) {
+        const newMap = new Map();
+        arr.forEach(element => {
+            newMap.set(arr.indexOf(element), element)
+        });
+        return newMap;   
     },
-    arrayToSet: function (array) {
-        
+    arrayToSet: function (arr) {
+        const newSet = new Set(arr);
+        return [...newSet];
     },
     setToMap: function (set) {
         
@@ -32,11 +37,7 @@ const newObj = {
     },
 }
 
-const sampleDate = new Date(Date.now());
-console.log(hu.date(sampleDate));
-
-const sampleNum = 10;
-console.log(hu.currency(sampleNum));
-
 const sampleStringArr = ['abc', 'def', 'ghi'];
-console.log(hu.list(sampleStringArr));
+
+console.log(newObj.arrayToMap(sampleStringArr));
+console.log(newObj.arrayToSet(sampleStringArr));
