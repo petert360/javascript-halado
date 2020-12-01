@@ -7,7 +7,17 @@ Készíts egy `HU` nevű objektumot, aminek az alábbi propertijei vannak:
 */
 
 const hu = {
+    date: function (date) {
+        return date.toLocaleDateString('hu');
+    },
+    currency: function (num) {
 
-
-
+    },
+    //    list():
 }
+
+const sampleDate = new Date(Date.now());
+console.log(hu.date(sampleDate));
+
+const sampleNum = 10;
+console.log(hu.currency(sampleNum));
