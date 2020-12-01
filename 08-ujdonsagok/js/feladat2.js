@@ -11,9 +11,15 @@ const hu = {
         return date.toLocaleDateString('hu');
     },
     currency: function (num) {
-
+        const huCurrency = new Intl.NumberFormat('hu-HU', {
+            style:'currency',
+            currency: 'HUF'
+        });
+        return huCurrency.format(num);
     },
-    //    list():
+    list: function (str) {
+        return `${str[0]}, ${str[1]}, és ${str[2]}`;
+    }
 }
 
 const sampleDate = new Date(Date.now());
@@ -21,3 +27,6 @@ console.log(hu.date(sampleDate));
 
 const sampleNum = 10;
 console.log(hu.currency(sampleNum));
+
+const sampleStringArr = ['abc', 'def', 'ghi'];
+console.log(hu.list(sampleStringArr));
